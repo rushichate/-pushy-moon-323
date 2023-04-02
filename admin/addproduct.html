@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="creat">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Image Link" id="image">
+        <input type="number" placeholder="Price" id="price">
+        <input type="text" placeholder="Brand" id="brand">
+        <input type="password" placeholder="Information" id="info">
+        <button onclick="onAdd()">Add Product</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    const onAdd = ()=>{
+      const payload ={
+        name:document.getElementById("name").value,
+        image:document.getElementById("image").value,
+        price:document.getElementById("price").value,
+        brand:document.getElementById("brand").value,
+        info:document.getElementById("info").value
+  
+      }
+      fetch("http://localhost:9797/products/add",{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json",
+          "Authorization":localStorage.getItem("token")
+        },
+        body:JSON.stringify(payload)
+      }).then(res=>res.json())
+      .then(res=>console.log(res))
+      .catch(err=>console.log(err))
+    }
+  </script>
