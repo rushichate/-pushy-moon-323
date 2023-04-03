@@ -14,7 +14,7 @@
     </div>
     <section id="header">
     
-        <div id="logo"><a href="index.html"><img src="/logo.jpg" alt="Error"></a></div> 
+        <div id="logo"><a href="/index.html"><img src="/logo.jpg" alt="Error"></a></div> 
          <div id="search"><input type="search" placeholder="Search for Catagory" id="search" onchange="openpage()"></div> 
           
        </div>
@@ -188,7 +188,11 @@
       },
       body:JSON.stringify(payload)
     }).then(res=>res.json())
-    .then(res=>console.log(res))
+    .then(res=>{
+      console.log(res)
+      window.location.href = "/index.html"})
     .catch(err=>console.log(err))
+    
   }
+  setTimeout
 </script>

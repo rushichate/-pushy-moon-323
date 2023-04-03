@@ -14,7 +14,7 @@
     </div>
     <section id="header">
     
-        <div id="logo"><a href="index.html"><img src="/logo.jpg" alt="Error"></a></div> 
+        <div id="logo"><a href="/index.html"><img src="/logo.jpg" alt="Error"></a></div> 
          <div id="search"><input type="search" placeholder="Search for Catagory" id="search" onchange="openpage()"></div> 
           
        </div>
@@ -160,7 +160,7 @@
       <h3>My Account</h3>
       <input type="text" placeholder="Email" id="email">
       <input type="password" placeholder="Enter Password" id="pass">
-      <button onclick="onLogin">Sign In</button>
+      <button onclick="onLogin()">Sign In</button>
   </div>
     <script src=""></script>
 </body>
@@ -181,7 +181,8 @@
     }).then(res=>res.json())
     .then(res=>{
       console.log(res)
-     localStorage.setItem("token",res.token)
+     localStorage.setItem("token",res.token);
+     window.location.href = "/index.html";
     })
     .catch(err=>console.log(err))
   }

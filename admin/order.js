@@ -1,0 +1,20 @@
+const Orders = [
+    {
+        productName:'Rushikesh',
+        productNumber:'1234',
+        paymentStatus:'paid',
+        shipping:'pending'
+    },
+    {
+        productName:'Rushikes',
+        productNumber:'123',
+        paymentStatus:'pai',
+        shipping:'pending'
+    },
+    {
+        productName:'Rushikes',
+        productNumber:'123',
+        paymentStatus:'pai',
+        shipping:'pending'
+    }
+]
