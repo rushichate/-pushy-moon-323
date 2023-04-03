@@ -1,13 +1,13 @@
-let displayname = document.getElementById("displayname");
+// let displayname = document.getElementById("displayname");
    
-  let username = JSON.parse(localStorage.getItem("username"));
-  displayname.innerText = username;
-  console.log(username);
-  let displayname1 = document.getElementById("displayname1");
+//   let username = JSON.parse(localStorage.getItem("username"));
+//   displayname.innerText = username;
+//   console.log(username);
+//   let displayname1 = document.getElementById("displayname1");
    
   
-  displayname1.innerText = username;
-  console.log(username);
+//   displayname1.innerText = username;
+//   console.log(username);
 
 function openpage(){
   var x = document.getElementById("search").value;
@@ -27,24 +27,24 @@ function openpage(){
     alert("Wrong Input");
   }
 }
-const navbar = document.querySelector('#navbar');
-  const closeMenu = document.querySelector('.closeMenu');
-  const openMenu = document.querySelector('.openMenu');
+// const navbar = document.querySelector('#navbar');
+//   const closeMenu = document.querySelector('.closeMenu');
+//   const openMenu = document.querySelector('.openMenu');
 
-  openMenu.addEventListener('click',show);
-  closeMenu.addEventListener('click',close);
+//   openMenu.addEventListener('click',show);
+//   closeMenu.addEventListener('click',close);
 
-  function show(){
-    navbar.style.display='flex';
-    navbar.style.top = '0';
-  }
-  function close(){
-    navbar.style.top='-110%';
-  }
+//   function show(){
+//     navbar.style.display='flex';
+//     navbar.style.top = '0';
+//   }
+//   function close(){
+//     navbar.style.top='-110%';
+//   }
 
 
-let defaultArr = []
-let myData = []
+// let defaultArr = []
+// let myData = []
 
 fetch("https://footwear-server.vercel.app/girls")
   .then((res) => {

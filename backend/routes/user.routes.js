@@ -15,7 +15,7 @@ userRouter.post("/register",async(req,res)=>{
             }else{
                 const user = new UserModel({firstname,lastname,phone,email,password:hash})
                 await user.save()
-                res.send({"msg":"new user register"}) 
+                res.send({"msg":"new user register"}) ;
             }
         })
          
@@ -30,16 +30,20 @@ userRouter.post("/login",async(req,res)=>{
     try{
           const user = await UserModel.find({email})
           if(user.length>0){
-            bcrypt.compare(password, user[0].password,(err, result)=> {
+            bcrypt.compare(password,user[0].password,(err, result)=> {
                 if(result){
                     let token = jwt.sign({userID:user[0]._id},"project")
                   res.send({"msg":"logged in","token":token})
+                  alert("Logged In")
+                  window.location.href ="/index.html"
                 }else{
                     res.send({"msg":"Wrong Credentials"})
-                }
+                    alert("Wrong Credentials")
+                } 
             });
         }else{
             res.send({"msg":"Wrong Credentials"})
+            alert("Wrong Credentials")
         }
 
     }catch(err){

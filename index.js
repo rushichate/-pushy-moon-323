@@ -1,4 +1,13 @@
-
+function openpage(){
+    var x = document.getElementById("find").value;
+  
+    if(x === "girl" || x === "Girl" || x === "GIRL"){
+      window.open("/girl.html");
+    }
+     else{
+      alert("Wrong Input");
+    }
+  }
 
 
 
